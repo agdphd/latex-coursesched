@@ -1,0 +1,36 @@
+\ProvidesPackage{agd-schedule}
+
+\usepackage[american]{babel}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+\usepackage{mathpazo}
+
+\usepackage{termcal}
+
+\newcommand{\MWFClass}{
+  \calday[Monday]{\classday}
+  \skipday
+  \calday[Wednesday]{\classday}
+  \skipday
+  \calday[Friday]{\classday}
+  \skipday
+  \skipday
+}
+
+\newcommand{\TThClass}{
+  \skipday
+  \calday[Tuesday]{\classday}
+  \skipday
+  \calday[Thursday]{\classday}
+  \skipday
+  \skipday
+  \skipday
+}
+
+\newcommand{\Holiday}[2]{
+  \options{#1}{\noclassday}
+  \caltext{#1}{#2}
+}
